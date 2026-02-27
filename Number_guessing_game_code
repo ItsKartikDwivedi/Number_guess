@@ -1,14 +1,28 @@
 import random
-number = random.randint(1,100)
-print("Welcome to number guessing game !")
+
+def play_game():
+    print("\nWelcome to the Number Guessing Game!")
+    print("I have selected a number between 1 and 100.")
+    print("Try to guess it!\n")
+
+    target_number = random.randint(1, 100)
+    attempts = 0
+
+    while True:
+        guess = int(input("Enter your guess: "))
+        attempts += 1
+
+        if guess > target_number:
+            print("Too High! Try again.\n")
+        elif guess < target_number:
+            print("Too Low! Try again.\n")
+        else:
+            print("Correct! You guessed the number in", attempts, "attempts.")
+            break
 
 while True:
-    you_think = int(input("I choosen : "))
-
-    if(you_think>number):
-        print("Too high, COME DOWN")
-    elif(you_think<number):
-        print("Too low, GO HIGH")
-    else:
-        print("Congo bro! You guessed it right")
+    play_game()
+    choice = input("\nDo you want to play again? (yes/no): ").lower()
+    if choice != "yes":
+        print("Thank you for playing! Goodbye!")
         break

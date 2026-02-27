@@ -1,0 +1,14 @@
+import random
+number = random.randint(1,100)
+print("Welcome to number guessing game !")
+
+while True:
+    you_think = int(input("I choosen : "))
+
+    if(you_think>number):
+        print("Too high, COME DOWN")
+    elif(you_think<number):
+        print("Too low, GO HIGH")
+    else:
+        print("Congo bro! You guessed it right")
+        break
